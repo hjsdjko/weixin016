@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cl.dao.ShejirenwujiedanDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.cl.entity.ShejirenwujiedanEntity" id="shejirenwujiedanMap">
+        <result property="renwumingcheng" column="renwumingcheng"/>
+        <result property="renwutupian" column="renwutupian"/>
+        <result property="renwuleixing" column="renwuleixing"/>
+        <result property="xuyaoshijian" column="xuyaoshijian"/>
+        <result property="yonghuxingming" column="yonghuxingming"/>
+        <result property="yonghuzhanghao" column="yonghuzhanghao"/>
+        <result property="shejishizhanghao" column="shejishizhanghao"/>
+        <result property="shejishixingming" column="shejishixingming"/>
+        <result property="jiedanshijian" column="jiedanshijian"/>
+        <result property="zhuangtai" column="zhuangtai"/>
+    </resultMap>
+
+    <select id="selectListView"
+		resultType="com.cl.entity.view.ShejirenwujiedanView" >
+
+		SELECT  shejirenwujiedan.* FROM shejirenwujiedan  shejirenwujiedan 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.cl.entity.view.ShejirenwujiedanView" >
+		SELECT * FROM shejirenwujiedan  shejirenwujiedan <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
